@@ -13,6 +13,12 @@ operations_list = {
     **dict.fromkeys(["9", "tan", "tg", "тангенс"], Tan)
 }
 # ^^^ Available operations list (NOT UPDATING AUTOMATICALLY)
+trigonometric_operations = [
+    "7", "sin", "синус",
+    "8", "cos", "косинус",
+    "9", "tan", "tg", "тангенс"
+]
+#^^^ This list defins if chosen operation is trigonometric (NOT UPDATING AUTOMATICALLY)
 
 available_operations = '''
 1. Summarise
@@ -28,6 +34,7 @@ available_operations = '''
 
 while True:
 
+    is_trigonometric = False
     x = get_number("Enter first number: ")
     y = get_number("Enter second number: ")
     #^^^ Input
@@ -39,6 +46,9 @@ while True:
 
         while True:
             calc = input("Enter calculation method: ").lower()
+            if calc in operations_list and calc in trigonometric_operations:
+                is_trigonometric = True
+                break
             if calc in operations_list:
                 break
             print("Invalid operation!")
@@ -46,10 +56,15 @@ while True:
 
         try:
             result = operations_list[calc](x, y)
-            print("=" * 30)
-            print(result)
-            print("Note: if you choose trigonometric operation, answer is in radians!")
-            print("=" * 30)
+            if not is_trigonometric:
+                print("=" * 30)
+                print(result)
+                print("=" * 30)
+            if is_trigonometric:
+                print("=" * 30)
+                print(result)
+                print("Note: answer is in radians!")
+                print("=" * 30)
             break
         except ZeroDivisionError as e:
             print(f"Error: {e}")
