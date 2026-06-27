@@ -6,7 +6,22 @@ def get_number(prompt):
             print("Please enter a number")
 # ^^^ This function prevents program from using noninteger variable
 
-YES_ANSWERS = ["1", "y", "yes", "yeah", "н", "нуы", "нуфр",
+def continue_cycle():
+    while True:
+        again = input("Would you like to continue?"
+                      "\n1. Yes"
+                      "\n2. No"
+                      "\n").lower()
+        if again in YES_ANSWERS:
+            break
+        elif again in NO_ANSWERS:
+            print("Goodbye!")
+            exit()
+        else:
+            print("Invalid input!")
+#^^^ This function stands for continuing calculations
+
+YES_ANSWERS = ["1", "y", "yes", "yep", "yeah", "н", "нуы", "нуфр",
                "да", "конечно"]
 NO_ANSWERS = ["2", "n", "no", "nah", "т", "тщ", "тфр",
               "нет", "не", "неа"]
