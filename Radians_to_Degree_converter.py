@@ -1,5 +1,6 @@
+from utils import get_number, continue_cycle
 import math
-from utils import *
+
 
 while True:
 
@@ -9,5 +10,5 @@ while True:
     print(f"{radians} radians = {degrees} degrees.")
 
     continue_cycle()
-            
+
 #^^^ Main convertion cycle
