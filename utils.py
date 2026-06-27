@@ -4,7 +4,7 @@ def get_number(prompt):
             return float(input(prompt))
         except ValueError:
             print("Please enter a number")
-# ^^^ This function prevents program from using noninteger variable
+# ^^^ Prevents program from using noninteger variable
 
 def continue_cycle():
     while True:
@@ -19,7 +19,7 @@ def continue_cycle():
             exit()
         else:
             print("Invalid input!")
-#^^^ This function stands for continuing calculations
+#^^^ Stands for continuing calculations
 
 YES_ANSWERS = ["1", "y", "yes", "yep", "yeah", "н", "нуы", "нуфр",
                "да", "конечно"]
