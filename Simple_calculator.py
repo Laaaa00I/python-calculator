@@ -1,61 +1,47 @@
-from Operations import Sum, Sub, Mult, Div, Pow, Root, Sin, Cos, Tan
 from utils import *
+from config import *
 
-operations_list = {
-    **dict.fromkeys(["1", "sum", "сумма", "сложение", "плюс", "+"], Sum),
-    **dict.fromkeys(["2", "mult", "multiply", "умножить", "произведение", "*"], Mult),
-    **dict.fromkeys(["3", "div", "division", "разделить", "деление", "/"], Div),
-    **dict.fromkeys(["4", "sub", "subtract", "отнять", "вычесть", "-"], Sub),
-    **dict.fromkeys(["5", "pow", "exponent", "степень", "возвести", "^"], Pow),
-    **dict.fromkeys(["6", "root", "корень", "извлечь", "радикал", "√"], Root),
-    **dict.fromkeys(["7", "sin", "синус"], Sin),
-    **dict.fromkeys(["8", "cos", "косинус"], Cos),
-    **dict.fromkeys(["9", "tan", "tg", "тангенс"], Tan)
-}
-# ^^^ Available operations list (NOT UPDATING AUTOMATICALLY)
-trigonometric_operations = [
-    "7", "sin", "синус",
-    "8", "cos", "косинус",
-    "9", "tan", "tg", "тангенс"
-]
-#^^^ This list defins if chosen operation is trigonometric (NOT UPDATING AUTOMATICALLY)
-
-available_operations = '''
-1. Summarise
-2. Multiply
-3. Divide
-4. Subtract
-5. Raise to a degree
-6. Root (y-th root of x)
-7. Sin (x)
-8. Cos (x)
-9. Tan (x)
-'''
 
 while True:
-
     is_trigonometric = False
-    x = get_number("Enter first number: ")
-    y = get_number("Enter second number: ")
-    #^^^ Input
+    print("Select calculation mode:"
+          "\n1. Standard"
+          "\n2. Trigonometric")
 
-    print(available_operations)
+    while True:
+        mode = input().lower()
+        if mode in standard_mode:
+            x = get_number("Enter first number: ")
+            y = get_number("Enter second number: ")
+            break
+        if mode in trigonometric_mode:
+            is_trigonometric = True
+            x = get_number("Enter number: ")
+            y = 0
+            break
+        print("Invalid input!")
+    #^^^ Mode selection
+
+    if mode in standard_mode:
+        print(standard_operations)
+    if mode in trigonometric_mode:
+        print(trigonometric_operations)
     #^^^ Shows available operations
 
     while True:
 
         while True:
             calc = input("Enter calculation method: ").lower()
-            if calc in operations_list and calc in trigonometric_operations:
-                is_trigonometric = True
-                break
-            if calc in operations_list:
+            if calc in standard_operations_list or calc in trigonometric_operations_list:
                 break
             print("Invalid operation!")
         #^^^ Operation selection cycle
 
         try:
-            result = operations_list[calc](x, y)
+            if is_trigonometric:
+                result = trigonometric_operations_list[calc](x, y)
+            else:
+                result = standard_operations_list[calc](x, y)
             if not is_trigonometric:
                 print("=" * 30)
                 print(result)
