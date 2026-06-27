@@ -1,3 +1,6 @@
+from config import YES_ANSWERS, NO_ANSWERS
+
+
 def get_number(prompt):
     while True:
         try:
@@ -21,7 +24,3 @@ def continue_cycle():
             print("Invalid input!")
 #^^^ Stands for continuing calculations
 
-YES_ANSWERS = ["1", "y", "yes", "yep", "yeah", "н", "нуы", "нуфр",
-               "да", "конечно"]
-NO_ANSWERS = ["2", "n", "no", "nah", "т", "тщ", "тфр",
-              "нет", "не", "неа"]
