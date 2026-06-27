@@ -52,7 +52,7 @@ while True:
             if calc in operations_list:
                 break
             print("Invalid operation!")
-        #^^^ This cycle stands for choosing an operation
+        #^^^ Operation selection cycle
 
         try:
             result = operations_list[calc](x, y)
@@ -68,9 +68,9 @@ while True:
             break
         except ZeroDivisionError as e:
             print(f"Error: {e}")
-        #^^^ Try & Except — tries to output answer, otherwise shows error (ZeroDivisionError / Zero Division Error)
+        #^^^ Try & Except — tries to output answer, otherwise shows error (Zero Division Error)
 
-    #^^^ This cycle contains choosing an operation and answer/error output
+    #^^^ This cycle contains operation selection and answer/error output
 
     continue_cycle()
 
