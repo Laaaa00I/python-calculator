@@ -4,7 +4,7 @@ My first Python project.
 
 ## Features
 - Basic arithmetic: Sum, Sub, Mult, Div, Pow, Root.
-- Trigonometry: Sin, Cos, Tan (output in radians).
+- Trigonometry: Sin, Cos, Tan, Cot (output in radians).
 - Standalone tool: Radians to Degrees converter.
 - Clean modular architecture (Operations, Utils).
 
