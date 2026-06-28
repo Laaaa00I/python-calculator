@@ -7,6 +7,7 @@ My first Python project.
 - Trigonometry: Sin, Cos, Tan, Cot (output in radians).
 - Standalone tool: Radians to Degrees converter.
 - Clean modular architecture (Operations, Utils).
+- Comments in Russian inside the code
 
 ## How to run
 1. Make sure Python is installed.
