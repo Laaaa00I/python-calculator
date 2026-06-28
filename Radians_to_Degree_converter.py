@@ -12,3 +12,4 @@ while True:
     continue_cycle()
 
 #^^^ Main convertion cycle
+#Ru: Основной цикл конвертации
