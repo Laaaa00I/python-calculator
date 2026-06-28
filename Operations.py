@@ -13,6 +13,9 @@ class Operation:
         return str(self.calculate())
 #^^^ Parent class
 
+
+#>>> STANDARD OPERATIONS
+
 class Sum(Operation):
     def calculate(self):
         return self.x + self.y
@@ -57,17 +60,28 @@ class Root(Operation):
         return math.exp(math.log(self.x) / self.y)
 #^^^ Root calculation operation (x ** (1 / y)), takes into account degree of the root and even root of a negative number
 
+
+#>>> TRIGONOMETRIC OPERATIONS
+
 class Sin(Operation):
     def calculate(self):
         return math.sin(self.x)
-#^^^ Sin operation (sin x)
+#^^^ Sine operation (sin x)
 
 class Cos(Operation):
     def calculate(self):
         return math.cos(self.x)
-#^^^ Cos operation (cos x)
+#^^^ Cosine operation (cos x)
 
 class Tan(Operation):
     def calculate(self):
         return math.tan(self.x)
-#^^^ Tan operation (tan x)
+#^^^ Tangent operation (tan x)
+
+class Cot(Operation):
+    def calculate(self):
+        try:
+            return 1 / math.tan(self.x)
+        except ZeroDivisionError:
+            raise ZeroDivisionError("cotangent is undefined")
+#^^^ Cotangent operations (cot x)
