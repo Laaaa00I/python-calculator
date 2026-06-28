@@ -21,12 +21,14 @@ while True:
             break
         print("Invalid input!")
     #^^^ Mode selection
+    # Ru: Выбор режима
 
     if mode in standard_mode:
         print(standard_operations)
     if mode in trigonometric_mode:
         print(trigonometric_operations)
     #^^^ Shows available operations
+    # Ru: Показывает доступные операции
 
     while True:
 
@@ -36,6 +38,7 @@ while True:
                 break
             print("Invalid operation!")
         #^^^ Operation selection cycle
+        # Ru: Выбор операции
 
         try:
             if is_trigonometric:
@@ -55,9 +58,12 @@ while True:
         except ZeroDivisionError as e:
             print(f"Error: {e}")
         #^^^ Try & Except — tries to output answer, otherwise shows error (Zero Division Error)
+        #Ru: Try & Except — пытается вывести ответ, в противном случае отображается ошибка (ошибка деления на ноль)
 
     #^^^ This cycle contains operation selection and answer/error output
+    # Ru: Этот цикл содержит выбор операции и вывод ответа/ошибки
 
     continue_cycle()
 
 # ^^^ Main calculation cycle
+#Ru: Основной цикл расчетов
