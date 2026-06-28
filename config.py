@@ -11,9 +11,10 @@ standard_operations_list = {
 }
 # ^^^ Standard operations list (NOT UPDATING AUTOMATICALLY)
 trigonometric_operations_list = {
-    **dict.fromkeys(["1", "sin", "синус"], Sin),
-    **dict.fromkeys(["2", "cos", "косинус"], Cos),
-    **dict.fromkeys(["3", "tan", "tg", "тангенс"], Tan)
+    **dict.fromkeys(["1", "sin", "sine", "синус"], Sin),
+    **dict.fromkeys(["2", "cos", "cosine", "косинус"], Cos),
+    **dict.fromkeys(["3", "tan", "tangent", "tg", "тангенс"], Tan),
+    **dict.fromkeys(["4", "cot", "cotangent", "ctg", "котангенс"], Cot)
 }
 #^^^ Trigonometric operations list (NOT UPDATING AUTOMATICALLY)
 
@@ -30,6 +31,7 @@ trigonometric_operations = '''
 1. Sin
 2. Cos
 3. Tan
+4. Cot
 '''
 #^^^ Trigonometric operations menu (NOT UPDATING AUTOMATICALLY)
 
