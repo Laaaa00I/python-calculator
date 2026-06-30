@@ -57,6 +57,8 @@ while True:
             break
         except ZeroDivisionError as e:
             print(f"Error: {e}")
+        except ValueError as e:
+            print(f"Error: {e}")
         #^^^ Try & Except — tries to output answer, otherwise shows error (Zero Division Error)
         #Ru: Try & Except — пытается вывести ответ, в противном случае отображается ошибка (ошибка деления на ноль)
 
