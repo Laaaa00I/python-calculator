@@ -8,7 +8,7 @@ def get_number(prompt):
         except ValueError:
             print("Please enter a number")
 # ^^^ Prevents program from using noninteger variable
-#Ru: Предотврощает программу от использования не числовых значений
+#Ru: Предотвращает программу от использования не числовых значений
 
 def continue_cycle():
     while True:
