@@ -57,11 +57,10 @@ class Pow(Operation):
 
 class Root(Operation):
     def calculate(self):
-        import math
         if self.y == 0:
             raise ZeroDivisionError("degree of the root cannot be zero")
         if self.x < 0 and self.y % 2 == 0:
-            raise ZeroDivisionError("even root of a negative number")
+            raise ValueError("even root of a negative number")
         if self.x < 0:
             return -math.exp(math.log(abs(self.x)) / self.y)
         return math.exp(math.log(self.x) / self.y)
